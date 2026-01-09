@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +59,18 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        blurple: {
+          DEFAULT: "hsl(var(--blurple))",
+          hover: "hsl(var(--blurple-hover))",
+        },
+        discord: {
+          dark: "hsl(var(--discord-dark))",
+          darker: "hsl(var(--discord-darker))",
+          card: "hsl(var(--discord-card))",
+          green: "hsl(var(--discord-green))",
+          yellow: "hsl(var(--discord-yellow))",
+          red: "hsl(var(--discord-red))",
         },
       },
       borderRadius: {
