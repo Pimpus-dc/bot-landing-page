@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Users, Settings, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface ServerCardProps {
+  id: string;
   name: string;
   icon: string;
   memberCount: number;
@@ -10,7 +12,7 @@ interface ServerCardProps {
   commandsUsed: number;
 }
 
-const ServerCard = ({ name, icon, memberCount, isOnline, commandsUsed }: ServerCardProps) => {
+const ServerCard = ({ id, name, icon, memberCount, isOnline, commandsUsed }: ServerCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -50,12 +52,16 @@ const ServerCard = ({ name, icon, memberCount, isOnline, commandsUsed }: ServerC
       </div>
 
       <div className="flex gap-2 mt-auto">
-        <Button variant="secondary" size="sm" className="flex-1">
-          <Settings className="w-4 h-4 mr-1.5" />
-          Zarządzaj
+        <Button variant="secondary" size="sm" className="flex-1" asChild>
+          <Link to={`/server/${id}/manage`}>
+            <Settings className="w-4 h-4 mr-1.5" />
+            Zarządzaj
+          </Link>
         </Button>
-        <Button variant="outline" size="sm" className="flex-1">
-          Statystyki
+        <Button variant="outline" size="sm" className="flex-1" asChild>
+          <Link to={`/server/${id}/stats`}>
+            Statystyki
+          </Link>
         </Button>
       </div>
     </motion.div>
