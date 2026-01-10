@@ -139,6 +139,7 @@ const Dashboard = () => {
               transition={{ delay: index * 0.1 }}
             >
               <ServerCard
+                id={server.id}
                 name={server.name}
                 icon={server.icon}
                 memberCount={server.memberCount}
